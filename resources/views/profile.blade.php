@@ -56,7 +56,7 @@
     <h1>Myself</h1>
 
     <div class="profile-container">
-        <img src="{{ asset('images/foto.png') }}" alt="Profile Picture" class="profile-img">
+    <img src="{{ asset('images/foto.png') }}" alt="Profile Picture" class="profile-img">
 
         <table>
             <tr>
