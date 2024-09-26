@@ -9,7 +9,7 @@
 
 </head>
 <body>
-    <h1>Myself</h1>
+    <h1>Profile User</h1>
 
     <div class="profile-container">
     <img src="{{ asset('assets/images/foto.png') }}" alt="Profile Picture" class="profile-img">
@@ -21,14 +21,14 @@
                 <td><?= $nama ?></td>
             </tr>
             <tr>
-                <td>Kelas</td>
-                <td>:</td>
-                <td><?= $kelas ?></td>
-            </tr>
-            <tr>
                 <td>NPM</td>
                 <td>:</td>
                 <td><?= $npm ?></td>
+            </tr>
+            <tr>
+                <td>Kelas</td>
+                <td>:</td>
+                <td> {{ $nama_kelas ?? 'Kelas tidak ditemukan'}} </td>
             </tr>
         </table>
     </div>
