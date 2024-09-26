@@ -83,6 +83,12 @@
             background-color: #A1D6F0;
             color: #333;
         }
+        .error {
+            color: red; /* Mengatur warna teks menjadi merah */
+            font-size: 12px; /* Ukuran font untuk pesan error */
+            margin-top: 5px; /* Jarak atas dari input */
+        }
+
         /* Responsive design */
         @media (max-width: 768px) {
             body {
@@ -105,29 +111,42 @@
 </head>
 <body>
 
-    <form action="/user/store" method="POST">
-        <h2>Create User</h2>
-        @csrf
-        <div class="form-group">
-            <label for="nama">Nama:</label>
-            <i class="fas fa-user"></i> <!-- Icon untuk nama -->
-            <input type="text" id="nama" name="nama" placeholder="Masukkan nama" required>
-        </div>
+<form action="/user/store" method="POST" novalidate> <!-- Menambahkan novalidate -->
+    <h2>Create User</h2>
+    @csrf
+    <div class="form-group">
+        <label for="nama">Nama:</label>
+        <i class="fas fa-user"></i>
+        <input type="text" id="nama" name="nama" placeholder="Masukkan nama" required>
+        @foreach ($errors->get('nama') as $msg)
+            <p class="error">{{ $msg }}</p> <!-- Menggunakan kelas error -->
+        @endforeach
+    </div>
 
-        <div class="form-group">
-            <label for="npm">NPM:</label>
-            <i class="fas fa-id-card"></i> <!-- Icon untuk NPM -->
-            <input type="text" id="npm" name="npm" placeholder="Masukkan NPM" required>
-        </div>
+    <div class="form-group">
+        <label for="npm">NPM:</label>
+        <i class="fas fa-id-card"></i>
+        <input type="text" id="npm" name="npm" placeholder="Masukkan NPM" required>
+        @foreach ($errors->get('npm') as $msg)
+            <p class="error">{{ $msg }}</p> <!-- Menggunakan kelas error -->
+        @endforeach
+    </div>
 
-        <div class="form-group">
-            <label for="kelas">Kelas:</label>
-            <i class="fas fa-school"></i> <!-- Icon untuk kelas -->
-            <input type="text" id="kelas" name="kelas" placeholder="Masukkan kelas" required>
-        </div>
+    <div class="form-group">
+        <label for="kelas">Kelas:</label>
+        <select name="kelas_id" id="kelas_id" required>
+            @foreach($kelas as $kelasItem)
+                <option value="{{ $kelasItem->id }}">{{ $kelasItem->nama_kelas }}</option>
+            @endforeach
+        </select>
+        @foreach ($errors->get('kelas_id') as $msg)
+            <p class="error">{{ $msg }}</p> <!-- Menggunakan kelas error -->
+        @endforeach
+    </div>
 
-        <input type="submit" value="Submit">
-    </form>
+    <input type="submit" value="Submit">
+</form>
+
 
 </body>
 </html>
