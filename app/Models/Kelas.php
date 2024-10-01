@@ -7,8 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Kelas extends Model
 {
-    use HasFactory;
+    use HasFactory; 
+    
+    protected $table = 'kelas';
 
-    
-    
+    public function getKelas() {
+        return $this->all();
+    }
 }
+
