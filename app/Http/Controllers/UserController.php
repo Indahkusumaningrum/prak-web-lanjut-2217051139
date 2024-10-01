@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Kelas;
+use App\Models\Kelas;   
 use App\Models\UserModel;
 use App\Http\Requests\UserRequest;
 
@@ -24,7 +24,7 @@ class UserController extends Controller
         //     'nama' => $nama,
         //     'kelas' => $kelas,
         //     'npm' => $npm,
-        // ];
+        // ];;
         return view ('create_user', 
                     ['kelas' => Kelas::all()
             ]);
