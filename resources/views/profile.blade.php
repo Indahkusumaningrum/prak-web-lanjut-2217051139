@@ -12,23 +12,22 @@
     <h1>Profile User</h1>
 
     <div class="profile-container">
-    <img src="{{ asset('assets/images/foto.png') }}" alt="Profile Picture" class="profile-img">
-
+    <img src="{{ asset('img/' . $user->foto) }}" alt="Profile Picture" class="profile-img" />
         <table>
             <tr>
                 <td>Nama</td>
                 <td>:</td>
-                <td><?= $nama ?></td>
+                <td>{{ $user->nama }}</td>
             </tr>
             <tr>
                 <td>NPM</td>
                 <td>:</td>
-                <td><?= $npm ?></td>
+                <td>{{ $user->npm }}</td>
             </tr>
             <tr>
                 <td>Kelas</td>
                 <td>:</td>
-                <td> {{ $nama_kelas ?? 'Kelas tidak ditemukan'}} </td>
+                <td> {{ $user->nama_kelas ?? 'Kelas tidak ditemukan' }} </td>
             </tr>
         </table>
     </div>
