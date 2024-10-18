@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ $title }}</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script> -->
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
@@ -177,6 +177,53 @@
                 padding: 8px;
             }
         }
+
+        /* Tombol View */
+    .btn-view {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #0C80BA; /* Biru */
+        color: white;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+        margin-right: 5px;
+    }
+    .btn-view:hover {
+        background-color: #74A4BC; /* Biru lebih terang */
+        color: white;
+    }
+
+    /* Tombol Edit */
+    .btn-edit {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #FFC107; /* Kuning */
+        color: black;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+        margin-right: 5px;
+    }
+    .btn-edit:hover {
+        background-color: #FFD54F; /* Kuning lebih terang */
+        color: black;
+    }
+
+    /* Tombol Delete */
+    .btn-delete {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #DC3545; /* Merah */
+        color: white;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+    .btn-delete:hover {
+        background-color: #E57373; /* Merah lebih terang */
+        color: white;
+    }
 
     </style>
 </head>
