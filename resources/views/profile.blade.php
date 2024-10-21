@@ -12,7 +12,7 @@
     <h1>Profile User</h1>
 
     <div class="profile-container">
-    <img src="{{ asset('img/' . $user->foto) }}" alt="Profile Picture" class="profile-img" />
+    <img src="{{ asset('storage/uploads/' . $user->foto) }}" alt="Profile Picture" class="profile-img" width="100" />
         <table>
             <tr>
                 <td>Nama</td>

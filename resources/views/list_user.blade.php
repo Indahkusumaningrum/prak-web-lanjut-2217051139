@@ -24,7 +24,9 @@
             <td>{{ $user['nama'] }}</td> 
             <td>{{ $user['npm'] }}</td> 
             <td>{{ $user['nama_kelas'] }}</td>
-            <td>    <img src="{{ asset('img/' . $user->foto) }}" alt="Profile Picture" class="profile-img" width="100" /></td>
+            <td>
+                <img src="{{ asset('storage/uploads/' . $user->foto) }}" alt="Profile Picture" class="profile-img" width="100" />
+            </td>
 
 
             <td>

@@ -45,7 +45,7 @@
         <input type="file" id="foto" name="foto" class="form-control" onchange="previewImage(event)">
         <!-- Display existing photo if available -->
         @if($user->foto)
-            <img id="currentPhoto" src="{{ asset('img/' . $user->foto) }}" alt="User Photo" width="100" class="mt-2">
+            <img id="currentPhoto" src="{{ asset('storage/uploads/' . $user->foto) }}" alt="User Photo" width="100" class="mt-2">
         @endif
         <!-- Image preview for new upload -->
         <img id="preview" width="100" class="mt-2" style="display:none;">
