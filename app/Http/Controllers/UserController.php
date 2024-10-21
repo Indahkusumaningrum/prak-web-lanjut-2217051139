@@ -51,25 +51,25 @@ public function store(Request $request)
         'npm' => 'required',
         'kelas_id' => 'required',
         'foto' => 'image|file|max:2048', // Validasi foto
-    ]);
+        ]);
 
     // Proses upload foto
     if ($request->hasFile('foto')) {
         $file = $request->file('foto');
         $filename = time() . '_' . $file->getClientOriginalName();
         $file->storeAs('uploads', $filename); // Menyimpan file ke storage
-
+    
         // Simpan data user ke database
-        $this->userModel->create([
-            'nama' => $request->input('nama'),
-            'npm' => $request->input('npm'),
-            'kelas_id' => $request->input('kelas_id'),
-            'foto' => $filename, // Menyimpan nama file ke database
+    $this->userModel->create([
+        'nama' => $request->input('nama'),
+        'npm' => $request->input('npm'),
+        'kelas_id' => $request->input('kelas_id'),
+        'foto' => $filename, // Menyimpan nama file ke database
         ]);
     }
 
-    return redirect()->to('/')->with('success', 'User Berhasil dibuat');
-}
+    return redirect()->route('user.list')->with('success', 'User Berhasil dibuat');
+    }
 
 public function edit($id){
     $user = UserModel::findOrFail($id);
