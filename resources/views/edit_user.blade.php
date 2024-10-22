@@ -51,6 +51,25 @@
         <img id="preview" width="100" class="mt-2" style="display:none;">
     </div>
 
+
+    <div class="form-group">
+        <label for="jurusan">Jurusan:</label>
+        <i class="fas fa-id-card"></i>
+        <input type="text" id="jurusan" name="jurusan" class="form-control" value="{{ old('jurusan', $user->jurusan) }}">
+        @foreach ($errors->get('jurusan') as $msg)
+            <p class="error">{{ $msg }}</p>
+        @endforeach
+    </div>
+
+    <div class="form-group">
+        <label for="semester">semester:</label>
+        <i class="fas fa-id-card"></i>
+        <input type="text" id="semester" name="semester" class="form-control" value="{{ old('semester', $user->semester) }}">
+        @foreach ($errors->get('semester') as $msg)
+            <p class="error">{{ $msg }}</p>
+        @endforeach
+    </div>
+
     <input type="submit" value="Submit" class="btn btn-primary mt-3">
 </form>
 

@@ -41,6 +41,16 @@
         <input type="file" id="foto" name="foto" class="form-control"><br><br>
     </div>
 
+    <div class="form-group">
+        <label for="jurusan">Jurusan:</label>
+        <input type="text" id="jurusan" name="jurusan" class="form-control"><br><br>
+    </div>
+
+    <div class="form-group">
+        <label for="semester">Semester:</label>
+        <input type="text" id="semester" name="semester" class="form-control"><br><br>
+    </div>
+
     <input type="submit" value="Submit">
 </form>
 
