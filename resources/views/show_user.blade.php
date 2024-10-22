@@ -29,6 +29,18 @@
                 <td>:</td>
                 <td> {{ $nama_kelas ?? 'Kelas tidak ditemukan' }} </td>
             </tr>
+
+            <tr>
+                <td>Jurusan</td>
+                <td>:</td>
+                <td> {{ $user->jurusan }} </td>
+            </tr>
+
+            <tr>
+                <td>Semester</td>
+                <td>:</td>
+                <td> {{ $user->semester }} </td>
+            </tr>
         </table>
     </div>
 </body>

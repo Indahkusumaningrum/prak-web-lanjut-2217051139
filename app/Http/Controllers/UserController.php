@@ -11,7 +11,6 @@ class UserController extends Controller
     public $userModel;
     public $kelasModel;
 
-
     public function __construct()
     {
         $this->userModel = new UserModel();
@@ -51,7 +50,9 @@ public function store(Request $request)
         'npm' => 'required',
         'kelas_id' => 'required',
         'foto' => 'image|file|max:2048', // Validasi foto
-        ]);
+        'jurusan' => 'required',
+        'semester' => 'required',    
+    ]);
 
     // Proses upload foto
     if ($request->hasFile('foto')) {
@@ -65,6 +66,8 @@ public function store(Request $request)
         'npm' => $request->input('npm'),
         'kelas_id' => $request->input('kelas_id'),
         'foto' => $filename, // Menyimpan nama file ke database
+        'jurusan' => $request->input('jurusan'),
+        'semester' => $request->input('semester'),
         ]);
     }
 
@@ -86,6 +89,8 @@ public function update(Request $request, $id){
     $user->nama = $request->nama;
     $user->npm = $request->npm;
     $user->kelas_id = $request->kelas_id;
+    $user->jurusan = $request->jurusan;
+    $user->semester = $request->semester;
 
     // Cek apakah ada file foto yang di-upload
     if ($request->hasFile('foto')) {
